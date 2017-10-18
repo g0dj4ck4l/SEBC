@@ -1,4 +1,4 @@
-**Slowest job**
+**Slowest run**
 
 Parameters:
 ```
@@ -10,7 +10,7 @@ Reducer JVM heap: 409
 ```
 Time of execution: 4minutes 17seconds
 
-**Fastest job**
+**Fastest run**
 
 Parameters:
 ```
