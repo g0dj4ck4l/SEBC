@@ -19,13 +19,13 @@ Hive Metastore Server, WebHCat Server, HiveServer2 and Gateway
 **7. What steps must be completed before integrating Cloudera Manager with Kerberos?**
 Before integrating Cloudera Manager with Kerberos, as reported in this document https://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_sg_intro_kerb.html, the following steps are needed:
 
-a) Set up a working KDC. Cloudera Manager supports authentication with MIT KDC and Active Directory.
-b) Configure the KDC to allow renewable tickets with non-zero ticket lifetimes.
-c) For MIT KDC, are needed the following settings:
+a. Set up a working KDC. Cloudera Manager supports authentication with MIT KDC and Active Directory.
+b. Configure the KDC to allow renewable tickets with non-zero ticket lifetimes.
+c. For MIT KDC, are needed the following settings:
 ```
 max_life = 1d  
 max_renewable_life = 7d
 kdc_tcp_ports = 88
 ```
-d) Kerberos client/libs must be installed on ALL hosts in the cluster.
-e) Create an account for Cloudera Manager that has the permissions to create other accounts in the KDC
+d. Kerberos client/libs must be installed on ALL hosts in the cluster.
+e. Create an account for Cloudera Manager that has the permissions to create other accounts in the KDC
