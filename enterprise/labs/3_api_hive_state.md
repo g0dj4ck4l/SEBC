@@ -1,4 +1,5 @@
 **Write curl statements that stop, start, and check the current state of your Hive service.**
+```
 [root@aedg1-cdh58 centos]# curl -u 'g0dj4ck4l:cloudera' 'http://aedg1-cdh58:7180/api/v2/clusters/g0dj4ck4l/services/hive'
 {
   "name" : "hive",
@@ -46,3 +47,4 @@
     "serviceName" : "hive"
   }
 }
+```

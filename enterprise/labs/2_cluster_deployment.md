@@ -1,4 +1,5 @@
 **Browse or use curl on the endpoint ./api/v2/cm/deployment**
+```
 [root@aedg1-cdh58 centos]# curl -u 'g0dj4ck4l:cloudera' 'http://aedg1-cdh58:7180/api/v2/cm/deployment'
 {
   "timestamp" : "2017-10-18T13:47:56.605Z",
@@ -874,3 +875,4 @@
     } ]
   }
 }
+```
