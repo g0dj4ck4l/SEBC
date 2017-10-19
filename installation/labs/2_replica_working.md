@@ -1,3 +1,4 @@
+```
 [root@amst1-cdh58 ~]# mysql -u root -p -e 'SHOW SLAVE STATUS \G'
 Enter password:
 *************************** 1. row ***************************
@@ -41,3 +42,4 @@ Master_SSL_Verify_Server_Cert: No
                Last_SQL_Error:
   Replicate_Ignore_Server_Ids:
              Master_Server_Id: 1
+```

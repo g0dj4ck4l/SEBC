@@ -1,8 +1,11 @@
 **1. Check vm.swappiness on all your nodes**
+```
 [root@aedg1-cdh58 ~]# sysctl vm.swappiness
 vm.swappiness = 1
+```
 
 **2. Show the mount attributes of all volumes**
+```
 [root@aedg1-cdh58 ~]# mount
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
 proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
@@ -32,16 +35,22 @@ debugfs on /sys/kernel/debug type debugfs (rw,relatime)
 /dev/xvda1 on /boot type xfs (rw,relatime,attr2,inode64,noquota)
 tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=1497296k,mode=700,uid=1000,gid=1000)
 binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+```
 
 **3. Show the reserve space of any non-root, ext-based volumes: XFS volumes do not maintain reserve space**
+```
 All non-root partitions are XFS
+```
 
 **4. Disable transparent hugepage support**
+```
 [root@aedg1-cdh58 ~]# cat /sys/kernel/mm/transparent_hugepage/enabled && cat /sys/kernel/mm/transparent_hugepage/defrag
 always madvise [never]
 always madvise [never]
+```
 
 **5. List your network interface configuration**
+```
 [root@aedg1-cdh58 ~]# ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -55,8 +64,10 @@ always madvise [never]
        valid_lft 3292sec preferred_lft 3292sec
     inet6 fe80::43b:44ff:fe6a:df08/64 scope link
        valid_lft forever preferred_lft forever
+```
 
 **6. List forward and reverse host lookups using getent or nslookup**
+```
 [root@aedg1-cdh58 ~]# for i in $(cat /etc/hosts | grep -v local | cut -d' ' -f1); do echo -n "Resolving $i: "; getent hosts $i; done
 Resolving 172.31.21.83: 172.31.21.83    amst1-cdh58.hadoop amst1-cdh58
 Resolving 172.31.27.154: 172.31.27.154   aedg1-cdh58.hadoop aedg1-cdh58
@@ -70,8 +81,10 @@ Resolving aedg1-cdh58: 172.31.27.154   aedg1-cdh58.hadoop aedg1-cdh58
 Resolving awrk1-cdh58: 172.31.18.8     awrk1-cdh58.hadoop awrk1-cdh58
 Resolving awrk2-cdh58: 172.31.20.76    awrk2-cdh58.hadoop awrk2-cdh58
 Resolving awrk3-cdh58: 172.31.31.23    awrk3-cdh58.hadoop awrk3-cdh58
+```
 
 **7. Show the nscd service is running**
+```
 [root@aedg1-cdh58 ~]# systemctl status nscd
 ● nscd.service - Name Service Cache Daemon
    Loaded: loaded (/usr/lib/systemd/system/nscd.service; enabled; vendor preset: disabled)
@@ -91,8 +104,10 @@ Oct 16 16:41:01 aedg1-cdh58.hadoop nscd[679]: 679 stat failed for file `/etc/net
 Oct 16 16:41:01 aedg1-cdh58.hadoop systemd[1]: Started Name Service Cache Daemon.
 Oct 16 16:41:01 aedg1-cdh58.hadoop nscd[679]: 679 monitored file `/etc/resolv.conf` was moved into place, adding watch
 Oct 16 16:41:21 aedg1-cdh58.hadoop nscd[679]: 679 checking for monitored file `/etc/netgroup': No such file or directory
+```
 
 **8. Show the ntpd service is running**
+```
 [root@aedg1-cdh58 ~]# systemctl status ntpd
 ● ntpd.service - Network Time Service
    Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
@@ -112,3 +127,4 @@ Oct 16 16:41:04 aedg1-cdh58.hadoop ntpd[669]: new interface(s) found: waking up 
 Oct 16 16:41:11 aedg1-cdh58.hadoop ntpd[669]: 0.0.0.0 c61c 0c clock_step +0.706962 s
 Oct 16 16:41:12 aedg1-cdh58.hadoop ntpd[669]: 0.0.0.0 c614 04 freq_mode
 Oct 16 16:41:13 aedg1-cdh58.hadoop ntpd[669]: 0.0.0.0 c618 08 no_sys_peer
+```
