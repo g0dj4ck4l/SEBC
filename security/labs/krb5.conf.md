@@ -1,3 +1,4 @@
+```
 [libdefaults]
 default_realm = HADOOP.COM
 dns_lookup_kdc = false
@@ -15,3 +16,4 @@ HADOOP.COM = {
 kdc = aedg1-cdh58.hadoop
 admin_server = aedg1-cdh58.hadoop
 }
+```
