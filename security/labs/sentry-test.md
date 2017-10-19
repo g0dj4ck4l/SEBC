@@ -1,5 +1,7 @@
 **Sentry Lab: Verify user privileges**
 ```
+[root@aedg1-cdh58 ~]# kinit g0dj4ck4l
+Password for g0dj4ck4l@HADOOP.COM:
 [root@aedg1-cdh58 ~]# beeline -u 'jdbc:hive2://aedg1-cdh58:10000/default;principal=hive/aedg1-cdh58.hadoop@HADOOP.COM'
 scan complete in 3ms
 Connecting to jdbc:hive2://aedg1-cdh58:10000/default;principal=hive/aedg1-cdh58.hadoop@HADOOP.COM
