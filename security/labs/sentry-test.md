@@ -2,9 +2,13 @@
 ```
 [root@aedg1-cdh58 ~]# kinit g0dj4ck4l
 Password for g0dj4ck4l@HADOOP.COM:
-[root@aedg1-cdh58 ~]# beeline -u 'jdbc:hive2://aedg1-cdh58:10000/default;principal=hive/aedg1-cdh58.hadoop@HADOOP.COM'
+[root@aedg1-cdh58 ~]# beeline
+Beeline version 1.1.0-cdh5.8.3 by Apache Hive
+beeline> !connect jdbc:hive2://localhost:10000/default;principal=hive/aedg1-cdh58@HADOOP.COM
 scan complete in 3ms
-Connecting to jdbc:hive2://aedg1-cdh58:10000/default;principal=hive/aedg1-cdh58.hadoop@HADOOP.COM
+Connecting to jdbc:hive2://localhost:10000/default;principal=hive/aedg1-cdh58@HADOOP.COM
+Enter username for jdbc:hive2://localhost:10000/default;principal=hive/aedg1-cdh58@HADOOP.COM: g0dj4ck4l
+Enter password for jdbc:hive2://localhost:10000/default;principal=hive/aedg1-cdh58@HADOOP.COM: ********
 Connected to: Apache Hive (version 1.1.0-cdh5.8.3)
 Driver: Hive JDBC (version 1.1.0-cdh5.8.3)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
