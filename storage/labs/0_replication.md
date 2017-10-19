@@ -1,3 +1,4 @@
+```
 [hdfs@amst1-cdh58 ~]$ hdfs fsck /user/g0dj4ck4l -files -blocks
 Connecting to namenode via http://amst1-cdh58.hadoop:50070
 FSCK started by hdfs (auth:SIMPLE) from /172.31.21.83 for path /user/g0dj4ck4l at Tue Oct 17 08:09:16 EDT 2017
@@ -32,8 +33,9 @@ FSCK ended at Tue Oct 17 08:09:16 EDT 2017 in 1 milliseconds
 
 
 The filesystem under path '/user/g0dj4ck4l' is HEALTHY
+```
 
-
+```
 [hdfs@amst1-cdh58 ~]$ hdfs fsck /user/ale966 -files -blocks
 Connecting to namenode via http://amst1-cdh58.hadoop:50070
 FSCK started by hdfs (auth:SIMPLE) from /172.31.21.83 for path /user/ale966 at Tue Oct 17 08:07:23 EDT 2017
@@ -68,3 +70,4 @@ FSCK ended at Tue Oct 17 08:07:23 EDT 2017 in 1 milliseconds
 
 
 The filesystem under path '/user/ale966' is HEALTHY
+```
