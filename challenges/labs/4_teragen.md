@@ -4,7 +4,7 @@ real    1m16.753s
 user    1m9.473s
 sys     0m1.777s
 ```
-
+@mfernest: the requirements called for the complete job output and a listing of the files from the job. I don't see them here.
 ```
 [ernest@bmst1-cdh ~]$ hdfs fsck /user/ernest/tgen512m/ -files -blocks
 Connecting to namenode via http://bedg1-cdh.hadoop:50070
